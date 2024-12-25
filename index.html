@@ -3,6 +3,10 @@
 <link rel="stylesheet" href="latex.css" />
 <style type="text/css">
 
+body { 
+  font-size: 110%;
+}
+
 body:not(.full) li.old { 
   display: none;
 } 
@@ -26,7 +30,7 @@ figcaption {
 
 </style>
 <title>Shiva Kaul - Machine Learning Researcher</title>
-<body id="top">
+<body id="top" class="libertinus">
 
 <header>
 <h1>Shiva Kaul</h1>
@@ -48,11 +52,11 @@ figcaption {
 <article>
 
 <h2 id="current">Current work on meta-analysis</h2>
-<p>I am designing a system which answers questions about healthcare interventions in a rigorous, comprehensive manner. "Rigorous" requires meaningful, falsifiable guarantees about how well the causal effect is estimated. "Comprehensive" means using as much data as possible. Unfortunately, the two dominant paradigms for answering such questions &mdash; meta-analysis in medicine, and language models in artificial intelligence &mdash; don't have these properties. Language models don't enjoy correctness guarantees; meanwhile, to preserve their causal rigor, meta-analyses are restricted solely to randomized controlled trials. The solution is a careful fusion of these approaches which I call <em><a href="papers/conformal-meta.pdf">conformal meta-analysis</a></em>. 
+<p>I am designing a system which answers questions about healthcare interventions in a rigorous, comprehensive manner. "Rigorous" requires meaningful, falsifiable guarantees about how well the causal effect is estimated. "Comprehensive" means using as much data as possible. Unfortunately, the two dominant paradigms for answering such questions &mdash; language models in artificial intelligence, and meta-analysis in medicine &mdash; don't have these properties. Language models don't enjoy correctness guarantees; meanwhile, to preserve their causal rigor, meta-analyses are restricted solely to randomized controlled trials. The solution is a careful fusion of these approaches which I call <em><a href="papers/conformal-meta.pdf">conformal meta-analysis</a></em>. 
 
 <figure>
   <img src="conformal-meta.png" />
-  <figcaption>Conformal meta-analysis answers the question comprehensively by involving both randomized trials and observational data. Even if the latter are confounded, the resulting predictions are supported by rigorous correctness guarantees. See <a href="papers/conformal-meta.pdf">the paper</a> for more details.</figcaption>
+  <figcaption>This answers the question comprehensively by involving both randomized trials and observational data. Even if the latter are confounded, the resulting predictions are supported by rigorous correctness guarantees. See <a href="papers/conformal-meta.pdf">the paper</a> for more details.</figcaption>
 </figure>
 
 <p>Multiple research groups and I are collaborating to achieve this vision. 
@@ -97,7 +101,7 @@ figcaption {
 
 <p>I am the creator and maintainer of the Rust CLI tool <tt>mky</tt>. Based on the same cryptographic infrastructure as passkeys, <tt>mky</tt> allows you to sign, encrypt, and verify messages using unphishable secret keys embedded on your mobile phone. (Like a Yubikey would, but you don't have to pay $50, carry it around, and worry about losing it). This means more secure <tt>ssh</tt>, <tt>scp</tt>, <tt>git</tt> commit signing, and <tt>age</tt> encryption &mdash; all in one easy-to-use bundle available on Linux, Mac, and Windows.</p> 
 
-<p>I try to contribute to open source even when I don't personally benefit. For example, I'm working on some new deployment features for <a href="https://github.com/oven-sh/bun/pull/2852">Bun</a> and <a href="">uWebSockets</a>. I've merged small fixes to <a href="https://github.com/openssh/openssh-portable/pull/543">OpenSSH</a>, <a href="https://github.com/ryantm/agenix/pull/176">agenix</a>, <a href="https://github.com/NixOS/nixpkgs/pull/207736">various</a> <a href="https://github.com/NixOS/nixpkgs/pull/209368">NixOS</a> packages, <a href="https://github.com/rtqichen/torchdiffeq/pull/181">torchdiffeq</a>, <a href="https://github.com/soumith/cudnn.torch/pull/344">torch</a>, <a href="https://github.com/soumith/cudnn.torch/pull/344">torch7</a>, etc. 
+<p>I make some effort to push changes and fixes upstream. For example, I'm working on some new deployment features for <a href="https://github.com/oven-sh/bun/pull/2852">Bun</a> and <a href="">uWebSockets</a>. I've merged small fixes to <a href="https://github.com/openssh/openssh-portable/pull/543">OpenSSH</a>, <a href="https://github.com/ryantm/agenix/pull/176">agenix</a>, <a href="https://github.com/NixOS/nixpkgs/pull/207736">various</a> <a href="https://github.com/NixOS/nixpkgs/pull/209368">NixOS</a> packages, <a href="https://github.com/rtqichen/torchdiffeq/pull/181">torchdiffeq</a>, <a href="https://github.com/soumith/cudnn.torch/pull/344">torch</a>, <a href="https://github.com/soumith/cudnn.torch/pull/344">torch7</a>, etc. 
 
 <h2 id="teaching">Teaching</h2>
 I was a teaching assistant for following courses at Carnegie Mellon: <ul>
