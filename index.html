@@ -1,47 +1,127 @@
 <html>
 <head>
+<link rel="stylesheet" href="latex.css" />
 <style type="text/css">
 
-* {
-  font-family: sans-serif;
+body:not(.full) li.old { 
+  display: none;
+} 
+
+body.full button {
+  display: none;
 }
 
-i {
-  color: #333;
+figure img.photo { 
+  max-width: 360px;
+  margin: auto;
+}
+
+figcaption { 
+  text-align: center;
+}
+
+.academic li > a:first-child { 
+  display: block;
 }
 
 </style>
-<title>Shiva Kaul</title>
-<body>
+<title>Shiva Kaul - Machine Learning Researcher</title>
+<body id="top">
 
-<img src="mlhc-pic.png" style="float: left; width: 20%; min-width: 200px; margin-right: 1em; margin-bottom: 1em" />
-<p><b>Shiva Kaul</b>. I'm a Ph.D student in the Computer Science Department at Carnegie Mellon. I work on <a href="https://dl.acm.org/doi/abs/10.1145/3278721.3278796">trustworthy machine learning</a>. 
-Like most people, I've been pretty amazed by the recent advances in AI and ML; like most researchers, I'm kind of wistful for the clarity and understanding we had in traditional machine learning, and a bit concerned about how a lack of such understanding could potentially lead to bad, harmful decisions. But I'm optimistic: In my opinion, modern learning is not inherently inscrutable, and classical learning isn't merely relegated to the dustbin of history. I think by <a href="thesis-outline.pdf">nontrivially combining</a> classical models with modern ones, we can achieve the best of both worlds. For example, we can <a href="https://proceedings.neurips.cc/paper/2020/hash/c3581d2150ff68f3b33b22634b8adaea-Abstract.html">replace the guts</a> of RNNs or Transformers with linear systems, making them both faster and more mathematically tractable. Alternatively, we can wrap foundation models (such as LLMs) in Gaussian processes and conformal prediction, allowing them to reliably answer important causal questions. I've always been interested in applications to <a href="http://proceedings.mlr.press/v106/kaul19a.html">healthcare and wellness</a>. With these new techniques, I'm currently reexamining the foundations of evidence-based medicine. 
+<header>
+<h1>Shiva Kaul</h1>
+<p class="author">Machine Learning Researcher</p>
+</header>
 
-<p>My advisor is the razor-sharp, incredibly-patient <a href="http://www.cs.cmu.edu/~ggordon/">Geoff Gordon</a>. Earlier, I earned an M.S. under <a href="https://www.cs.cmu.edu/~satya/">Mahadev Satyanarayanan</a> on the topic of human-in-the-loop machine learning.
+<figure>
+  <img class="photo" src="mlhc-pic.png" />
+  <figcaption>Presenting work at <a href="https://www.mlforhc.org">MLHC</a>.</figcaption>
+</figure>
 
-<h2 style="clear: both">Publications, reports, and working papers</h2>
+<div class="abstract">
+<h2>About me</h2>
+<p>I work on computational and statistical methods at the intersection of machine learning and healthcare (as described <a href="#current">below</a>). I graduated from the Ph.D. program at <a href="https://csd.cmu.edu">Carnegie Mellon's Computer Science Department</a>. My <a href="http://reports-archive.adm.cs.cmu.edu/anon/2024/abstracts/24-137.html">thesis</a> developed syntheses between classical and modern machine learning techniques which achieved "best of both worlds" results in terms of safety and accuracy. My advisor was the razor-sharp, incredibly-patient <a href="http://www.cs.cmu.edu/~ggordon/">Geoff Gordon</a>. Earlier, I earned an M.S. under <a href="https://www.cs.cmu.edu/~satya/">Mahadev Satyanarayanan</a> on the topic of human-in-the-loop machine learning. I was fortunate to spend time at Microsoft Research under <a href="https://dennyzhou.github.io/">Denny Zhou</a> developing statistical learning theory for hierarchical classifiers. 
+</div>
+
+
+<main>
+<article>
+
+<h2 id="current">Current work on meta-analysis</h2>
+<p>I am designing a system which answers questions about healthcare interventions in a rigorous, comprehensive manner. "Rigorous" requires meaningful, falsifiable guarantees about how well the causal effect is estimated. "Comprehensive" means using as much data as possible. Unfortunately, the two dominant paradigms for answering such questions &mdash; meta-analysis in medicine, and language models in artificial intelligence &mdash; don't have these properties. Language models don't enjoy correctness guarantees; meanwhile, to preserve their causal rigor, meta-analyses are restricted solely to randomized controlled trials. The solution is a careful fusion of these approaches which I call <em><a href="papers/conformal-meta.pdf">conformal meta-analysis</a></em>. 
+
+<figure>
+  <img src="conformal-meta.png" />
+  <figcaption>Conformal meta-analysis answers the question comprehensively by involving both randomized trials and observational data. Even if the latter are confounded, the resulting predictions are supported by rigorous correctness guarantees. See <a href="papers/conformal-meta.pdf">the paper</a> for more details.</figcaption>
+</figure>
+
+<p>Multiple research groups and I are collaborating to achieve this vision. 
 <ul>
-<li><a href="papers/conformal-meta.pdf">Meta-Analysis with Untrusted Data</a>. By Shiva Kaul and Geoffrey J. Gordon. <a href="https://ml4h.cc">ML4H 2024</a>. <a href="https://arxiv.org/abs/2407.09387">Full version</a>
-<li><a href="https://openreview.net/pdf?id=XRo78JEfVnt">Optimizing Over All Sequences of Orthogonal Polynomials</a>. By Shiva Kaul. Working paper.
-<li><a href="https://proceedings.neurips.cc/paper/2020/hash/c3581d2150ff68f3b33b22634b8adaea-Abstract.html">Linear Dynamical Systems as a Core Computational Primitive</a>. By Shiva Kaul. NeurIPS 2020. <i>Selected for Spotlight Presentation</i>. <a href="https://github.com/shivak/ldstack">Code</a> 
-<li><a href="http://proceedings.mlr.press/v106/kaul19a.html">Measuring the Sympathetic Response to Intense Exercise in a Practical Setting</a>. By Shiva Kaul, Anthony Falco, and Karianne Anthes. <a href="https://www.mlforhc.org/2019-conference">MLHC 2019</a>.
-<li><a href="#">Linear Dynamical Systems as a Core Computational Primitive</a>. By Shiva Kaul. <a href="http://roseyu.com/time-series-workshop/">ICML 2019 Time Series Workshop</a>.
-<li><a href="papers/mo.pdf">Margins and Opportunity</a>. By Shiva Kaul. <a href="http://www.aies-conference.com/2018/">AAAI/AIES 2018</a>. <i>Selected for Doctoral Consortium</i>.
-<li><a href="papers/soa.pdf">Depth Without Distress</a>. Working paper.
+<li>An important baseline question to ask is: how well is meta-analysis currently working in evidence-based medicine? Along with <a href="https://www.sunlab.org/">Jimeng Sun</a> and <a href="https://zifengwang.xyz/">Zifeng Wang</a> at University of Illinois, Urbana-Champaign, I am performing a large-scale empirical assessment of the predictive value of meta-analysis. Besides being interesting in its own right, this will establish a baseline for conformal meta-analysis to surpass.  
+<li>Along with <a href="https://scholar.google.com/citations?user=vEIMoZEAAAAJ">Rae Woong Park</a> and <a href="https://kr.linkedin.com/in/min-gyu-kim">Min-Gyu Kim</a> at Ajou University, I am reconducting various meta-analyses with the aid of electronic health record data from South Korea's integrated hospital network. We believe conformal meta-analysis will deliver superior results in these applications.  
+<li>In addition to these empirical projects, I am continuing to develop new statistical methodology as well. Soon, <a href="https://www.mayamathur.com">Maya Mathur</a> (at Stanford University) and I will examine how meta-analytic prediction intervals must change to account for publication bias and related meta-scientific issues.
+</ul></p>
+
+<h2 id="papers">Selected papers</h2>
+<ul class="academic">
+<li><a href="papers/conformal-meta.pdf">Meta-Analysis with Untrusted Data</a> By Shiva Kaul and Geoffrey J. Gordon. <a href="https://ml4h.cc">ML4H 2024</a>. <a href="https://arxiv.org/abs/2407.09387">Full arXiv version</a>
+<li><a href="http://reports-archive.adm.cs.cmu.edu/anon/2024/abstracts/24-137.html">Classical Improvements to Modern Machine Learning</a> Ph.D. Thesis, CMU-CS-24-137
+	<!-- <li><a href="https://openreview.net/pdf?id=XRo78JEfVnt">Optimizing Over All Sequences of Orthogonal Polynomials</a>. By Shiva Kaul. Working paper. -->
+<li><a href="https://proceedings.neurips.cc/paper/2020/hash/c3581d2150ff68f3b33b22634b8adaea-Abstract.html">Linear Dynamical Systems as a Core Computational Primitive</a> By Shiva Kaul. NeurIPS 2020. <i>Selected for Spotlight Presentation</i>. <a href="https://github.com/shivak/ldstack">Code</a> 
+<li><a href="http://proceedings.mlr.press/v106/kaul19a.html">Measuring the Sympathetic Response to Intense Exercise in a Practical Setting</a> By Shiva Kaul, Anthony Falco, and Karianne Anthes. <a href="https://www.mlforhc.org/2019-conference">MLHC 2019</a>
+	<!-- <li><a href="#">Linear Dynamical Systems as a Core Computational Primitive</a>. By Shiva Kaul. <a href="http://roseyu.com/time-series-workshop/">ICML 2019 Time Series Workshop</a>. -->
+<li><a href="papers/mo.pdf">Margins and Opportunity</a> By Shiva Kaul. <a href="http://www.aies-conference.com/2018/">AAAI/AIES 2018</a>. <i>Selected for <a href="https://dl.acm.org/doi/abs/10.1145/3278721.3278796">Doctoral Consortium</a></i>
+	<!-- <li><a href="papers/soa.pdf">Depth Without Distress</a>. Working paper. -->
 <!--<li><a href="proposal.pdf">Fast Agnostic Classification</a>. Ph.D thesis proposal.-->
-<li><a href="https://sites.google.com/site/costnips/abstracts#shiva">Anticoncentration regularizers for stochastic combinatorial problems</a>. In <a href="https://sites.google.com/site/costnips/">NIPS 2011 Workshop on Computational Trade-offs in Statistical Learning</a>.
+<!-- <li><a href="https://sites.google.com/site/costnips/abstracts#shiva">Anticoncentration regularizers for stochastic combinatorial problems</a>. In <a href="https://sites.google.com/site/costnips/">NIPS 2011 Workshop on Computational Trade-offs in Statistical Learning</a>.
 <li><a href="https://arxiv.org/abs/1311.3440">Using molecular similarity to reduce the cost of electronic structure calculations</a>. In Abstracts of Papers of the American Chemical Society (Vol. 244). 1155 16TH ST, NW, Washington, D.C. 20036 USA
-<li><a href="http://reports-archive.adm.cs.cmu.edu/anon/2010/abstracts/10-120.html">Interactive machine learning in Diamond</a>. M.S. Thesis and CMU Technical Report, CMU-CS-10-120
+	<li><a href="http://reports-archive.adm.cs.cmu.edu/anon/2010/abstracts/10-120.html">Interactive machine learning in Diamond</a>. M.S. Thesis and CMU Technical Report, CMU-CS-10-120 -->
 </ul>
 
-<h2>Selected recent talks</h2>
-<ul>
-<li><a href="talks/meta-sunlab-illinois.pdf">Meta-Analysis with Untrusted Data</a>. <a href="https://sunlab.org/">Sunlab</a>, University of Illinois, September 2024.
-<li><a href="talks/neurips20.pptx">Linear Dynamical Systems as a Core Computational Primitive</a>. NeurIPS, December 2020. <a href="talks/neurips20-poster.pdf">Poster</a> and <a href="https://slideslive.com/38938000">Video</a>.
-<li><a href="talks/allergan.pptx">Trusting Modern Machine Learning</a>. Allergan Scientific Series, January 2020.
+<h2 id="talks">Selected talks</h2>
+<ul class="academic">
+<li><a href="talks/meta-sunlab-illinois.pdf">Meta-Analysis with Untrusted Data</a> <a href="https://sunlab.org/">Sunlab</a>, University of Illinois, September 2024
+<li><a href="talks/defense-static.pdf">Classical Improvements to Modern Machine Learning</a> Ph.D. Thesis Defense, August 2024. <a href="talks/defense.pptx">Full PPT</a>
+<li><a href="talks/neurips20.pptx">Linear Dynamical Systems as a Core Computational Primitive</a> NeurIPS Spotlight, December 2020. <a href="talks/neurips20-poster.pdf">Poster</a> and <a href="https://slideslive.com/38938000">Video</a>
+<li><a href="talks/allergan.pptx">Trusting Modern Machine Learning</a> Allergan Scientific Series, January 2020
+<li class="old"><a href="talks/waring.pdf">Symmetric Tensor Rank</a> SELECT LAB, Carnegie Mellon, Spring 2013
+<li class="old"><a href="talks/polyopt.pdf">Semidefinite Programming Hierarchies for Polynomial Programs</a> 10-725 Optimization Lecture, Carnegie Mellon, Fall 2012
+<li class="old"><a href="talks/conic-duality.pdf">Conic Duality</a> 10-725 Optimization Recitation, Carnegie Mellon, Fall 2012
+<li class="old"><a href="talks/nips11.pdf">Anticoncentration Regularizers for Stochastic Combinatorial Problems</a> NIPS 2011 Workshop on Computational-Statistical Tradeoffs, December 2011
+<li class="old"><a href="talks/electronic-structure-theory-quickly.pdf">Electronic Structure Theory, <i>Quickly</i></a> SELECT LAB, Carnegie Mellon, January 2011
 </ul>
 
-<p><a href="mailto:skkaul@cs.cmu.edu">Contact me</a>
+<button onclick="document.body.classList.add('full')">Show old/technical talks</button>
+
+<h2 id="opensource">Open source</h2>
+
+<p>I am the creator and maintainer of the Rust CLI tool <tt>mky</tt>. Based on the same cryptographic infrastructure as passkeys, <tt>mky</tt> allows you to sign, encrypt, and verify messages using unphishable secret keys embedded on your mobile phone. (Like a Yubikey would, but you don't have to pay $50, carry it around, and worry about losing it). This means more secure <tt>ssh</tt>, <tt>scp</tt>, <tt>git</tt> commit signing, and <tt>age</tt> encryption &mdash; all in one easy-to-use bundle available on Linux, Mac, and Windows.</p> 
+
+<p>I try to contribute to open source even when I don't personally benefit. For example, I'm working on some new deployment features for <a href="https://github.com/oven-sh/bun/pull/2852">Bun</a> and <a href="">uWebSockets</a>. I've merged small fixes to <a href="https://github.com/openssh/openssh-portable/pull/543">OpenSSH</a>, <a href="https://github.com/ryantm/agenix/pull/176">agenix</a>, <a href="https://github.com/NixOS/nixpkgs/pull/207736">various</a> <a href="https://github.com/NixOS/nixpkgs/pull/209368">NixOS</a> packages, <a href="https://github.com/rtqichen/torchdiffeq/pull/181">torchdiffeq</a>, <a href="https://github.com/soumith/cudnn.torch/pull/344">torch</a>, <a href="https://github.com/soumith/cudnn.torch/pull/344">torch7</a>, etc. 
+
+<h2 id="teaching">Teaching</h2>
+I was a teaching assistant for following courses at Carnegie Mellon: <ul>
+	<li><a href="https://www.cs.cmu.edu/~ggordon/10725-F12/">10-725 Optimization</a>, a graduate-level course in optimization for machine learning researchers. Taught by <a href="https://www.cs.cmu.edu/~ggordon">Geoff Gordon</a> and <a href="https://www.stat.berkeley.edu/~ryantibs/">Ryan Tibshirani</a>; assisted by myself, <a href="https://www.linkedin.com/in/woo-young-lee">Wooyoung Lee</a>, <a href="https://www.stat.cmu.edu/~aramdas/">Aaditya Ramdas</a>, and <a href="https://scholar.google.com/citations?user=l5ryKEkAAAAJ">Kevin Waugh</a>.
+<li><a href="">15-359 Probability and Computing</a>, an undergraduate-level course in probability and stochastic processes. It was taught by <a href="https://www.cs.cmu.edu/~harchol/">Mor Harchol-Balter</a> and <a href="https://www.cs.cmu.edu/~sutner/">Klaus Sutner</a>.
+</ul>
+I was the lead instructor for the following courses: <ul>
+<li><a href="talks/idea-math-summer.pdf">IDEA MATH: Playing Prediction Games</a>, a volunteer course taught at a summer camp for talented high school students.
+<li><a href="https://web.archive.org/web/20071022135603/http://shivakaul.com/railscourse/">98-085 Ruby on Rails</a>, a student-led, <a href="https://web.archive.org/web/20100720023346/http://www.shivakaul.com:80/railscourse/spring08">twice-offered</a> undergraduate course on the (at the time) brand-new, highly-productive web application framework.
+</ul>
+I created some concise <a href="probability-cards/">measure-theoretic probability flashcards</a>, while reading an assortment of books and taking a couple courses on the subject. 
+
+<h2 id="personal">Personal</h2>
+
+<p>
+I have participated in <a href="https://results.chronotrack.com/event/results/event/event-20844?entryID=21569545">distance running</a>, CrossFit, and (these days) powerlifting / barbell training. I enjoy cooking and taking care of <a href="https://instagram.com/arktos_polarbear">Arktos</a>, my Samoyed dog.
+</p>
+
+<figure>
+  <img class="photo" src="arktos.jpg" />
+  <figcaption>Arktos pup at the vet.</figcaption>
+</figure>
+
+<h2 id="contact">Contact</h2>
+<p><a href="mailto:me@shivakaul.com">Email</a> is preferred.
 </body>
 </html>
